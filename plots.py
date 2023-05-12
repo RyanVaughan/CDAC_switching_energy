@@ -318,6 +318,14 @@ def replicate_closed_form(cdac):
     plt.plot(s)
     plt.plot(cdac.conv_temporal[:,2] - np.mean(cdac.conv_temporal[:,2]))
     plt.title('replicating signal in closed form')
+
+    '''
+    the leakage at each timepoint is a square wave multiplied by a staircase function
+    Also, the square waves with exponentially increasing frequency and 
+    exponentially decreasing amplitude sum to approximate a staircase function.
+    With 'enough' bits, the total energy will then be proportional to x*x or x^2 as 
+    visibly seen in the total energy plots.
+    '''
     
     # covariance matrix is diagonal:
     '''
